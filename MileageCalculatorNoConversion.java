@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  * Practice assignment 4
  * Name: MPGCalculator.java
  * Course: CSCI 1302
- * Description: updating file
+ * Description: updating MileageCalculatorNoConversion file
  */
 
 public class MileageCalculatorNoConversion extends Application {
