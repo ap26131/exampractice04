@@ -50,12 +50,12 @@ public class MileageCalculatorNoConversion extends Application {
 
     private GridPane mainPane = new GridPane();
     
-    // created a combo box for selecting conversion
+    // Task 1: replace the two radiobuttons with a single combo box
 	private ComboBox<String> cmb1 = new ComboBox<>();
 
     public void start(Stage primaryStage) {
     	
-    	// Task 1: replace the two radiobuttons with a single combo box
+    	// Task 2: populate the combo box options using some of the already-created strings in the class
     	ObservableList<String> units = FXCollections.observableArrayList(defaultResult, altResult);
     	cmb1.getItems().addAll(units);
     	
