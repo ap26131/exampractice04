@@ -4,18 +4,21 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /*
  * Author: Joseph Berrigan, Alex Perez
  * Date: 11/7/2022
  * Practice assignment 4
- * Name: MPGCalculator.java
+ * Name: MileageCalculatorNoConversion.java
  * Course: CSCI 1302
  * Description: updating MileageCalculatorNoConversion file
  */
@@ -45,23 +48,23 @@ public class MileageCalculatorNoConversion extends Application {
     private TextField tfCapacity = new TextField(defaultEntry);
     private TextField tfResult = new TextField(defaultCalc);
 
-    private RadioButton rbMPG = new RadioButton(defaultResult);
-    private RadioButton rbKPL = new RadioButton(altResult);
-    private ToggleGroup tgConv = new ToggleGroup();
-
     private GridPane mainPane = new GridPane();
+    
+    // created a combo box for selecting conversion
+	private ComboBox<String> cmb1 = new ComboBox<>();
 
     public void start(Stage primaryStage) {
-    	// set toggle group for RadioButtons
-    	rbMPG.setToggleGroup(tgConv);
-    	rbKPL.setToggleGroup(tgConv);
-
+    	
+    	// Task 1: replace the two radiobuttons with a single combo box
+    	ObservableList<String> units = FXCollections.observableArrayList(defaultResult, altResult);
+    	cmb1.getItems().addAll(units);
+    	
         // set preferences for UI components
         tfDistance.setMaxWidth(txtWidth);
         tfCapacity.setMaxWidth(txtWidth);
         tfResult.setMaxWidth(txtWidth);
         tfResult.setEditable(false);
-        rbMPG.setSelected(true);
+       // rbMPG.setSelected(true);
 
         // create a main grid pane to hold items
         mainPane.setPadding(new Insets(10.0));
@@ -70,8 +73,6 @@ public class MileageCalculatorNoConversion extends Application {
 
         // add items to mainPane
         mainPane.add(lblEffType, 0, 0);
-        mainPane.add(rbMPG, 0, 1);
-        mainPane.add(rbKPL, 1, 1);
         mainPane.add(lblDistance, 0, 2);
         mainPane.add(tfDistance, 1, 2);
         mainPane.add(lblCapacity, 0, 3);
@@ -109,7 +110,7 @@ public class MileageCalculatorNoConversion extends Application {
      */
     private void changeLabels() {
     	// distinguish between L/100KM and MPG
-    	if (rbKPL.isSelected() && lblCapacity.getText().equals(defaultCapacity)) {
+   	if (rbKPL.isSelected() && lblCapacity.getText().equals(defaultCapacity)) {
         	// update labels
         	lblCapacity.setText(altCapacity);
         	lblDistance.setText(altMileage);
