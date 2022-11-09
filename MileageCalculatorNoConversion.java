@@ -1,11 +1,3 @@
-/**
- * File: csci1302/ch16/MileageCalculator.java
- * Package: ch16
- * @author Christopher Williams
- * Created on: Apr 12, 2017
- * Last Modified: Apr 15, 2019
- * Description:
- */
 package exampractice04;
 
 import javafx.application.Application;
@@ -20,12 +12,12 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /*
- * Author: Joseph Berrigan, Alex Perez was here......... maybe
- * Date: 11/7/2022 its pass my bed time 
+ * Author: Joseph Berrigan, Alex Perez
+ * Date: 11/7/2022
  * Practice assignment 4
  * Name: MPGCalculator.java
  * Course: CSCI 1302
- * Description: Mileage calculator updated to be on GitHub maybe this works?
+ * Description: updating file
  */
 
 public class MileageCalculatorNoConversion extends Application {
